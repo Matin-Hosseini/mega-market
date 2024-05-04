@@ -1,9 +1,13 @@
-import { Box, TextField } from "@mui/material";
+import { Box, Button, SwipeableDrawer, TextField } from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import {Link} from 'react-router-dom'
 
 const Home = () => {
+  const [drawer, setDrawer] = useState(false);
+
   return (
     <Box>
       <h1>this is home</h1>
@@ -25,6 +29,20 @@ const Home = () => {
         label="Required"
         defaultValue="Hello World"
       />
+
+      <Button onClick={() => setDrawer(true)}>open drawer</Button>
+     
+
+      <SwipeableDrawer
+        anchor={"bottom"}
+        open={drawer}
+        onClose={() => setDrawer(false)}
+        onOpen={() => setDrawer(true)}
+        
+        sx={{height: "100vh"}}
+      >
+        this is the drawer
+      </SwipeableDrawer>
     </Box>
   );
 };

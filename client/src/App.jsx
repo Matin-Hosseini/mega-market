@@ -1,21 +1,13 @@
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
-import {
-  AppBar,
-  Button,
-  CssBaseline,
-  IconButton,
-  ThemeProvider,
-  Toolbar,
-  Typography,
-  createTheme,
-} from "@mui/material";
+import { Button, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 
-import { useEffect, useState } from "react";
-import { useRoutes } from "react-router-dom";
+import { Suspense, useEffect, useState } from "react";
+import { Link, useRoutes } from "react-router-dom";
+import Header from "./components/Header";
 import routes from "./routes";
 
 const rtlCache = createCache({
@@ -56,7 +48,8 @@ export default function RtlOptOut() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <CacheProvider value={rtl ? rtlCache : ltrCache}>
-          {router}
+          <Header />
+          <Suspense fallback={<h1>loading...</h1>}>{router}</Suspense>
         </CacheProvider>
       </ThemeProvider>
     </Box>

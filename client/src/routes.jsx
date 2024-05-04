@@ -1,17 +1,22 @@
+import { lazy } from "react";
+
 import AdminDashboard from "./pages/AdminDashboard";
 import Article from "./pages/Articles";
 import ArticleDetail from "./pages/Articles/Detail";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+// import Home from "./pages/Home";
+// import Login from "./pages/Login";
 import UserPanel from "./pages/UserPanel";
 import WishList from "./pages/WishList";
 import Cart from "./pages/cart";
 import ProductList from "./pages/products";
 import ProductDetail from "./pages/products/Detail";
 
+const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+
 const routes = [
   { path: "/", element: <Home /> },
-  {path: "/login", element: <Login/>},
+  { path: "/login", element: <Login /> },
   { path: "/articles", element: <Article /> },
   { path: "/articles/:articleId", element: <ArticleDetail /> },
   { path: "/products", element: <ProductList /> },
