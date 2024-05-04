@@ -1,4 +1,4 @@
-import { AppBar, Box } from "@mui/material";
+import { AppBar, Box, Typography } from "@mui/material";
 import { useEffect } from "react";
 
 const Header = () => {
@@ -9,6 +9,7 @@ const Header = () => {
   return (
     <AppBar>
       <Box>لوگو</Box>
+      <Typography variant="h2">متن تستی</Typography>
     </AppBar>
   );
 };
