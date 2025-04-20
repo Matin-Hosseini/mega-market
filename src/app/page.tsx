@@ -1,7 +1,11 @@
+import Button from "@/components/button";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main>
-      <h1 className="text-green-500 text-5xl font-bold">اپلیکیشن</h1>
+      <Link href={"/products"}>products</Link>
+      <Button />
     </main>
   );
 }
