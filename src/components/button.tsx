@@ -1,17 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { ButtonHTMLAttributes, useEffect, useRef } from "react";
+import { twMerge } from "tailwind-merge";
+import { cva } from "class-variance-authority";
+import clsx from "clsx";
 
-export default function Button() {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+export default function Button({ children, className, ...props }: ButtonProps) {
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const btn = btnRef.current!;
     if (!btn) return;
 
-    const handleClick = (e: MouseEvent) => {
-      console.log("click");
-
+    const applyRippleEffect = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
       const x = e.clientX - target.offsetLeft;
@@ -30,10 +35,10 @@ export default function Button() {
       }, 500);
     };
 
-    btn.addEventListener("click", handleClick);
+    btn.addEventListener("click", applyRippleEffect);
 
     return () => {
-      btn.removeEventListener("click", handleClick);
+      btn.removeEventListener("click", applyRippleEffect);
     };
   }, []);
 
@@ -41,10 +46,23 @@ export default function Button() {
     <>
       <button
         ref={btnRef}
-        className="bg-blue-500 text-white px-3 py-2 rounded cursor-pointer relative overflow-hidden"
+        className={twMerge(clsx(buttonVariants({})))}
+        {...props}
       >
-        مشاهده محصول
+        {children}
       </button>
     </>
   );
 }
+
+const buttonVariants = cva(
+  "bg-blue-500 text-white px-3 py-2 rounded cursor-pointer relative overflow-hidden",
+  {
+    variants: {
+      type: {
+        primary: "text-blue-500",
+      },
+      size: {},
+    },
+  }
+);

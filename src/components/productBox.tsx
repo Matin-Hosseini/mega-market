@@ -47,7 +47,7 @@ export default function ProductBox() {
 
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-2">
-            <button className="p-2 bg-blue-50 text-blue-500 text-xl rounded cursor-pointer">
+            <button className="p-2 bg-blue-50 text-blue-500 text-xl rounded">
               <HeartPlusIcon />
             </button>
             <button className="p-2 bg-blue-50 text-blue-500 text-xl rounded">
