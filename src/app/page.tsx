@@ -11,7 +11,6 @@ export default function Home() {
         onClick={() => {
           console.log("this is the click");
         }}
-        className="text-red-500 bg-red-100"
       >
         مشاهده محصولات
       </Button>

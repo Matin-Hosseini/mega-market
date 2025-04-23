@@ -1,15 +1,22 @@
 "use client";
 
 import { ButtonHTMLAttributes, useEffect, useRef } from "react";
-import { twMerge } from "tailwind-merge";
-import { cva } from "class-variance-authority";
-import clsx from "clsx";
+import { cva, VariantProps } from "class-variance-authority";
+import cn from "@/utils/cn";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   children: React.ReactNode;
 }
 
-export default function Button({ children, className, ...props }: ButtonProps) {
+export default function Button({
+  children,
+  className,
+  shape,
+  size,
+  ...props
+}: ButtonProps) {
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -46,7 +53,7 @@ export default function Button({ children, className, ...props }: ButtonProps) {
     <>
       <button
         ref={btnRef}
-        className={twMerge(clsx(buttonVariants({})))}
+        className={cn(buttonVariants({ shape, size, className }))}
         {...props}
       >
         {children}
@@ -59,10 +66,24 @@ const buttonVariants = cva(
   "bg-blue-500 text-white px-3 py-2 rounded cursor-pointer relative overflow-hidden",
   {
     variants: {
-      type: {
-        primary: "text-blue-500",
+      shape: {
+        subtle: "",
+        contained: "",
       },
-      size: {},
+      variant: {
+        primary: "",
+        secondary: "",
+      },
+      size: {
+        sm: "",
+        md: "",
+        lg: "",
+      },
+    },
+    defaultVariants: {
+      shape: "subtle",
+      variant: "primary",
+      size: "md",
     },
   }
 );
