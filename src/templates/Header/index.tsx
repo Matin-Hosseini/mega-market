@@ -24,7 +24,7 @@ export default function Header() {
             <HeartIcon />
           </div>
           <div>
-            <CartIcon  />
+            <CartIcon />
           </div>
           <div>
             <Link

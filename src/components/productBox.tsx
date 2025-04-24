@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Tag from "./tag";
-import { CpuIcon } from "@/icons/cpu";
-import Link from "next/link";
-import { HeartPlusIcon } from "@/icons/heart-plus";
-import { CartPlusIcon } from "@/icons/cart-plus";
+import Image from 'next/image';
+import Tag from './tag';
+import { CpuIcon } from '@/icons/cpu';
+import Link from 'next/link';
+import { HeartPlusIcon } from '@/icons/heart-plus';
+import { CartPlusIcon } from '@/icons/cart-plus';
 
 export default function ProductBox() {
   return (
@@ -14,11 +14,11 @@ export default function ProductBox() {
           01:36:51:48
         </div>
       </div>
-      <Link href={"/product/id"} className="flex justify-center ">
+      <Link href={'/product/id'} className="flex justify-center ">
         <Image
-          src={"/images/products/product.jpg"}
-          width={"200"}
-          height={"200"}
+          src={'/images/products/product.jpg'}
+          width={'200'}
+          height={'200'}
           alt="product"
         />
       </Link>
@@ -38,7 +38,7 @@ export default function ProductBox() {
           </div>
         </div>
 
-        <Link href={"/product/id"}>
+        <Link href={'/product/id'}>
           <h2 className="line-clamp-2 text-sm mb-4">
             لپ تاپ 15.6 اینچی ایسوس مدل ASUS Rog Strix Scar 18 15.6 inches 1TB
             SSD

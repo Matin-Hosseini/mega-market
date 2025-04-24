@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { ButtonHTMLAttributes, useEffect, useRef } from "react";
-import { cva, VariantProps } from "class-variance-authority";
-import cn from "@/utils/cn";
+import { ButtonHTMLAttributes, useEffect, useRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import cn from '@/utils/cn';
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -29,12 +29,12 @@ export default function Button({
       const x = e.clientX - target.offsetLeft;
       const y = e.clientY - target.offsetTop;
 
-      const ripples = document.createElement("span");
+      const ripples = document.createElement('span');
 
-      ripples.classList.add("ripple-effect");
+      ripples.classList.add('ripple-effect');
 
-      ripples.style.left = x + "px";
-      ripples.style.top = y + "px";
+      ripples.style.left = x + 'px';
+      ripples.style.top = y + 'px';
       btn.appendChild(ripples);
 
       setTimeout(() => {
@@ -42,10 +42,10 @@ export default function Button({
       }, 500);
     };
 
-    btn.addEventListener("click", applyRippleEffect);
+    btn.addEventListener('click', applyRippleEffect);
 
     return () => {
-      btn.removeEventListener("click", applyRippleEffect);
+      btn.removeEventListener('click', applyRippleEffect);
     };
   }, []);
 
@@ -63,27 +63,27 @@ export default function Button({
 }
 
 const buttonVariants = cva(
-  "bg-blue-500 text-white px-3 py-2 rounded cursor-pointer relative overflow-hidden",
+  'bg-blue-500 text-white px-3 py-2 rounded cursor-pointer relative overflow-hidden',
   {
     variants: {
       shape: {
-        subtle: "",
-        contained: "",
+        subtle: '',
+        contained: '',
       },
       variant: {
-        primary: "",
-        secondary: "",
+        primary: '',
+        secondary: '',
       },
       size: {
-        sm: "",
-        md: "",
-        lg: "",
+        sm: '',
+        md: '',
+        lg: '',
       },
     },
     defaultVariants: {
-      shape: "subtle",
-      variant: "primary",
-      size: "md",
+      shape: 'subtle',
+      variant: 'primary',
+      size: 'md',
     },
-  }
+  },
 );
