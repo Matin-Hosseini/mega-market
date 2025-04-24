@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${morraba.variable} font-morabba px-4`}>
+      <body className={`${morraba.variable} font-morabba`}>
         <Header />
         {children}
         <p>
