@@ -4,6 +4,7 @@ import { CpuIcon } from '@/icons/cpu';
 import Link from 'next/link';
 import { HeartPlusIcon } from '@/icons/heart-plus';
 import { CartPlusIcon } from '@/icons/cart-plus';
+import CountDownTimer from './countdownTimer';
 
 export default function ProductBox() {
   return (
@@ -11,7 +12,7 @@ export default function ProductBox() {
       <div className="flex items-center justify-between">
         <Tag title="30%" />
         <div className="bg-blue-500 text-white px-2 py-1 rounded">
-          01:36:51:48
+          <CountDownTimer targetTime="2025-05-12T00:00:00" />
         </div>
       </div>
       <Link href={'/product/id'} className="flex justify-center ">
@@ -55,7 +56,7 @@ export default function ProductBox() {
             </button>
           </div>
           <div className="flex flex-col items-end">
-            <span className=" text-md text-blue-500">56,000,000 تومان</span>
+            <span className=" text-lg text-blue-500">56,000,000 تومان</span>
             <span className="text-gray-500 line-through text-xs">
               56,000,00 تومان
             </span>

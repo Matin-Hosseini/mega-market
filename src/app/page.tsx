@@ -1,19 +1,14 @@
 'use client';
 
-import Button from '@/components/button';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main>
+    <main className="container mx-auto">
       <Link href={'/products'}>products</Link>
-      <Button
-        onClick={() => {
-          console.log('this is the click');
-        }}
-      >
-        مشاهده محصولات
-      </Button>
+      <div className="container mx-auto flex items-center gap-10"></div>
+      <Button variant={'secondary'}>متن دکمه</Button>
     </main>
   );
 }
