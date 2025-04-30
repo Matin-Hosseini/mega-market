@@ -1,12 +1,12 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-morabba: var(--font-morabba);
 
-  --color-primary: var(--color-blue-500);
+  --color-primary: var(--color-blue-600);
   --color-primary-transparent: var(--color-violet-100);
 
   --color-secondary: var(--color-gray-500);
