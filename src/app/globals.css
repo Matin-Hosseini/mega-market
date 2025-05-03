@@ -7,7 +7,7 @@
   --font-morabba: var(--font-morabba);
 
   --color-primary: var(--color-blue-600);
-  --color-primary-transparent: var(--color-violet-100);
+  --color-primary-bg: var(--color-blue-100);
 
   --color-secondary: var(--color-gray-500);
   --color-secondary-transparent: var(--color-gray-100);

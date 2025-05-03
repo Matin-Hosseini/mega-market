@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import HeaderHoverCard from '@/components/HeaderHoverCard';
+import WishList from './components/wishList';
+import Cart from './components/cart';
 
 export default function Header() {
   return (
@@ -25,80 +27,20 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <HeaderHoverCard trigger={<HeartIcon />}>
-              <div className="flex items-center justify-between ">
-                <span className="text-gray-500">4 کالا</span>
-                <Link href={'/cart'}>مشاهده سبد خرید</Link>
-              </div>
-              <div className="my-5  divide-red-500">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="flex items-center gap-2 py-2">
-                    <div>
-                      <Image
-                        src={'/images/products/product.jpg'}
-                        width={50}
-                        height={40}
-                        alt="محصول"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-sm">
-                        لپ تاپ 15.6 اینچی ایسوس مدل Asus Rog Strix G16{' '}
-                      </h3>
-                      <p className="text-gray-600 text-xs">120,000,000 تومان</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <WishList />
 
-              <Button className="w-full flex items-center justify-around">
-                <span>ورود و تسویه</span>
-                <div className="border border-white h-[90%]"></div>
-                <span>490,000,000 تومان</span>
-              </Button>
-            </HeaderHoverCard>
-
-            <HeaderHoverCard trigger={<CartIcon />}>
-              <div className="flex items-center justify-between ">
-                <span className="text-gray-500">4 کالا</span>
-                <Link href={'/cart'}>مشاهده سبد خرید</Link>
-              </div>
-              <div className="my-5  divide-red-500">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="flex items-center gap-2 py-2">
-                    <div>
-                      <Image
-                        src={'/images/products/product.jpg'}
-                        width={50}
-                        height={40}
-                        alt="محصول"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-sm">
-                        لپ تاپ 15.6 اینچی ایسوس مدل Asus Rog Strix G16{' '}
-                      </h3>
-                      <p className="text-gray-600 text-xs">120,000,000 تومان</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Button className="w-full flex items-center justify-around">
-                <span>ورود و تسویه</span>
-                <div className="border border-white h-[90%]"></div>
-                <span>490,000,000 تومان</span>
-              </Button>
-            </HeaderHoverCard>
+            <Cart />
 
             <div>
-              <Link
-                className="flex items-cente gap-2 rounded border p-2 border-blue-500 text-blue-500 hover:bg-blue-50"
-                href="/login"
-              >
-                <UserRound />
-                <span> ورود|عضویت</span>
-              </Link>
+              <Button asChild variant={'outline'}>
+                <Link
+                  className="flex items-cente gap-2 rounded border p-2 border-blue-500 text-blue-500 hover:bg-blue-50"
+                  href="/login"
+                >
+                  <UserRound />
+                  <span> ورود|عضویت</span>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

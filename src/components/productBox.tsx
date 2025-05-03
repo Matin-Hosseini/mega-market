@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { HeartPlusIcon } from '@/icons/heart-plus';
 import { CartPlusIcon } from '@/icons/cart-plus';
 import CountDownTimer from './countdownTimer';
+import { Button } from './ui/button';
 
 export default function ProductBox() {
   return (
     <div className="shadow-lg p-2 rounded-md text-sm">
       <div className="flex items-center justify-between">
         <Tag title="30%" />
-        <div className="bg-blue-500 text-white px-2 py-1 rounded">
+        <div className="bg-primary text-white px-2 py-1 rounded">
           <CountDownTimer targetTime="2025-05-12T00:00:00" />
         </div>
       </div>
@@ -48,12 +49,12 @@ export default function ProductBox() {
 
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-2">
-            <button className="p-2 bg-blue-50 text-blue-500 text-xl rounded">
+            <Button variant={'outline'}>
               <HeartPlusIcon />
-            </button>
-            <button className="p-2 bg-blue-50 text-blue-500 text-xl rounded">
+            </Button>
+            <Button>
               <CartPlusIcon />
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col items-end">
             <span className=" text-lg text-blue-500">56,000,000 تومان</span>
