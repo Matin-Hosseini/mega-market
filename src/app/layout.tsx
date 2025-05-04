@@ -4,7 +4,7 @@ import './globals.css';
 
 import HolyLoader from 'holy-loader';
 import { Toaster } from 'sonner';
-import Header from '@/templates/Header';
+import Header from '@/templates/header';
 
 export const metadata: Metadata = {
   title: 'مگامارکت',
